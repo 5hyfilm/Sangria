@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Inside Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Makro</h2>
+        <ul>
+            <li><a href="#accredible" onclick="showContent('accredible')">Accredible</a></li>
+            <li><a href="#chatgpt" onclick="showContent('chatgpt')">ChatGPT</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="accredible" class="tab-content">
+            <iframe src="https://your-accredible-url.com" frameborder="0"></iframe>
+        </div>
+        <div id="chatgpt" class="tab-content">
+            <iframe src="https://chat.openai.com" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
