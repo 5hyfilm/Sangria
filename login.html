@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Web Inside Web</title>
     <link href="styles/login.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
-        <form id="login-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-        <div id="error-message" class="error-message"></div>
+        <div class="login-content">
+            <img src="images/logo.png" alt="Makro Logo" class="logo">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="error-message" class="error-message"></div>
+        </div>
     </div>
     <script src="scripts/login.js"></script>
 </body>
