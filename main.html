@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Inside Web</title>
     <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/project_list.css" rel="stylesheet">
+    <link href="styles/modal.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,6 +18,7 @@
             <li><a href="#analytic" onclick="showContent('analytic')">Analytic Assistance</a></li>
             <li><a href="#dashboard" onclick="showContent('dashboard')">Dashboard</a></li>
             <li><a href="#data" onclick="showContent('data')">Data</a></li>
+            <li><a href="#project" onclick="showContent('project')">Project</a></li>
         </ul>
         <button class="logout-button" onclick="logout()">Log Out</button>
     </div>
@@ -57,7 +60,109 @@
             </div>
             <iframe width="402" height="346" frameborder="0" scrolling="no" src="https://chula-my.sharepoint.com/personal/6432154921_student_chula_ac_th/_layouts/15/Doc.aspx?sourcedoc={15c17484-1ea9-4dac-8caf-709932ae1ce6}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
         </div>
+        <div id="project" class="tab-content">
+            <div class="tab-header">
+                <img src="images/logo_project.png" alt="Project Logo" class="section-logo">
+                <a href="#" target="_blank">Project Matching</a>
+                <button class="create-project-button" onclick="showCreateProjectModal()">Create a Project</button>
+            </div>
+            <div class="project-list-header">
+                <h1>Project Matching</h1>
+            </div>
+            <div class="project-cards">
+                <!-- Project Card -->
+                <div class="project-card" onclick="showProjectProfile()">
+                    <img src="images/profile1.png" alt="Profile Image">
+                    <h3>Belle Ray</h3>
+                    <p>Position<br>Qualifications<br>Experience<br>Location</p>
+                </div>
+                <!-- Repeat project cards as needed -->
+                <div class="project-card" onclick="showProjectProfile()">
+                    <img src="images/profile2.png" alt="Profile Image">
+                    <h3>Cecelia Hill</h3>
+                    <p>Position<br>Qualifications<br>Experience<br>Location</p>
+                </div>
+                <div class="project-card" onclick="showProjectProfile()">
+                    <img src="images/profile3.png" alt="Profile Image">
+                    <h3>Edward Daniels</h3>
+                    <p>Position<br>Qualifications<br>Experience<br>Location</p>
+                </div>
+                <div class="project-card" onclick="showProjectProfile()">
+                    <img src="images/profile4.png" alt="Profile Image">
+                    <h3>Marvin Watts</h3>
+                    <p>Position<br>Qualifications<br>Experience<br>Location</p>
+                </div>
+                <div class="project-card" onclick="showProjectProfile()">
+                    <img src="images/profile5.png" alt="Profile Image">
+                    <h3>Elizabeth Flowers</h3>
+                    <p>Position<br>Qualifications<br>Experience<br>Location</p>
+                </div>
+                <div class="project-card" onclick="showProjectProfile()">
+                    <img src="images/profile6.png" alt="Profile Image">
+                    <h3>Jeremiah Ruiz</h3>
+                    <p>Position<br>Qualifications<br>Experience<br>Location</p>
+                </div>
+                <div class="project-card" onclick="showProjectProfile()">
+                    <img src="images/profile7.png" alt="Profile Image">
+                    <h3>John Swanson</h3>
+                    <p>Position<br>Qualifications<br>Experience<br>Location</p>
+                </div>
+                <div class="project-card" onclick="showProjectProfile()">
+                    <img src="images/profile8.png" alt="Profile Image">
+                    <h3>Winnie Roberts</h3>
+                    <p>Position<br>Qualifications<br>Experience<br>Location</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Modal for Project Profile and Creating Project -->
+    <div id="projectProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Create a project profile</h2>
+            <form>
+                <label>Project Title</label>
+                <input type="text" name="title" placeholder="Project Title">
+                
+                <label>Project Description</label>
+                <textarea name="description" placeholder="Concise overview of the project's purpose and goals."></textarea>
+                
+                <div class="form-group">
+                    <label>Scope</label>
+                    <textarea name="scope" placeholder="Clearly delineate project boundaries and limitations, specifying inclusions and exclusions."></textarea>
+                    
+                    <label>Stakeholders</label>
+                    <textarea name="stakeholders" placeholder="Identify involved parties."></textarea>
+                    
+                    <label>Deliverables</label>
+                    <textarea name="deliverables" placeholder="Specify the expected project outputs."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Project Timeline</label>
+                    <textarea name="timeline" placeholder="Present an overview of the project schedule, organized in sprints."></textarea>
+                    
+                    <label>Requirements</label>
+                    <textarea name="requirements" placeholder="Outline the skills and characteristics necessary for the role."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Job Description</label>
+                    <textarea name="job_description" placeholder="Details about roles responsible for project execution."></textarea>
+                    
+                    <label>Approval and Authorization</label>
+                    <textarea name="approval" placeholder="Designate the Project Manager for approval."></textarea>
+                    
+                    <label>Benefits and Impact</label>
+                    <textarea name="benefits" placeholder="Highlight employee gains."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>

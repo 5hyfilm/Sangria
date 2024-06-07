@@ -10,6 +10,14 @@ function showContent(tabId) {
     setTimeout(() => {
         activeContent.style.left = '0';
     }, 10); // Slight delay to trigger transition
+
+    // Highlight the active link in the sidebar
+    const links = document.querySelectorAll('.sidebar ul li a');
+    links.forEach(link => link.classList.remove('active'));
+    const activeLink = document.querySelector(`.sidebar ul li a[href="#${tabId}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
 }
 
 function handleIframeError(iframe) {
@@ -38,3 +46,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showContent('accredible'); // Display the first tab by default
 });
+
+function createProject() {
+    // Redirect to create project page
+    window.location.href = 'create_project.html';
+}
+
+function showProjectProfile() {
+    const modal = document.getElementById("projectProfileModal");
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modal = document.getElementById("projectProfileModal");
+    modal.style.display = "none";
+}
+
+function showCreateProjectModal() {
+    const modal = document.getElementById("projectProfileModal");
+    modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("projectProfileModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
