@@ -1,39 +1,52 @@
+/* Importing the Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
     display: flex;
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
 }
 
 .sidebar {
     width: 200px;
-    background-color: #2c3e50;
+    background-color: rgb(0, 15, 59); /* Updated color */
     color: white;
     height: 100vh;
     position: fixed;
-    padding-top: 20px;
+    padding: 20px 0;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: width 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.sidebar h2 {
-    text-align: center;
-    margin: 0;
-    padding: 10px 0;
-    border-bottom: 1px solid #34495e;
-    font-size: 1.5em;
+.sidebar .logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 30px; /* Increase space below the logo */
 }
 
 .sidebar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    flex: 1; /* Allow ul to grow and take available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sidebar ul li {
-    padding: 15px;
+    position: relative;
+    padding: 20px 15px; /* Increase vertical padding */
+    margin-bottom: 10px; /* Add space between items */
     text-align: center;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
 }
 
 .sidebar ul li a {
@@ -41,13 +54,51 @@ body {
     text-decoration: none;
     display: block;
     font-size: 1.1em;
-    transition: transform 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    padding: 10px 15px;
+    border-radius: 8px;
 }
 
 .sidebar ul li a:hover {
     background-color: #34495e;
-    border-radius: 4px;
-    transform: scale(1.1);
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.sidebar ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    transition: width 0.3s;
+}
+
+.sidebar ul li a:hover::before {
+    width: 100%;
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px; /* Add space above the button */
+    align-self: stretch; /* Ensure it fits within the sidebar */
+    margin: 10px; /* Add margin to avoid touching the edges */
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
 }
 
 .content {
@@ -80,18 +131,22 @@ body {
 
 .tab-content iframe {
     width: 100%;
-    height: calc(100% - 40px); /* Adjust for header height */
+    height: calc(100% - 60px); /* Adjust for header height */
     border: none;
 }
 
 .tab-header {
-    padding: 10px;
-    background-color: #2c3e50;
+    padding: 20px;
+    background-color: rgb(0, 15, 59); /* Updated color */
     color: white;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.5em; /* Make the text larger */
     border-bottom: 1px solid #34495e;
-    height: 40px;
+    height: 60px; /* Increase the height */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text */
+    position: relative; /* Required for absolute positioning of button */
 }
 
 .tab-header a {
@@ -101,4 +156,33 @@ body {
 
 .tab-header a:hover {
     text-decoration: underline;
+}
+
+.section-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    margin-right: 10px; /* Space between logo and link */
+}
+
+.chatgpt-button {
+    background-color: rgb(252, 27, 27);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.chatgpt-button:hover {
+    background-color: rgb(252, 27, 27);
+    transform: scale(1.05);
 }
