@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Inside Web</title>
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Makro</h2>
+        <ul>
+            <li><a href="#accredible" onclick="showContent('accredible')">Accredible</a></li>
+            <li><a href="#strategy" onclick="showContent('strategy')">Strategy Assistance</a></li>
+            <li><a href="#analytic" onclick="showContent('analytic')">Analytic Assistance</a></li>
+            <li><a href="#dashboard" onclick="showContent('dashboard')">Dashboard</a></li>
+            <li><a href="#data" onclick="showContent('data')">Data</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="accredible" class="tab-content">
+            <div class="tab-header"><a href="https://dashboard.accredible.com" target="_blank">Accredible</a></div>
+            <iframe src="https://dashboard.accredible.com/issuer/dashboard/" frameborder="0"></iframe>
+        </div>
+        <div id="strategy" class="tab-content">
+            <div class="tab-header"><a href="https://makrohr.azurewebsites.net/" target="_blank">Strategy Assistance</a></div>
+            <iframe src="https://makrohr.azurewebsites.net/" frameborder="0"></iframe>
+        </div>
+        <div id="analytic" class="tab-content">
+            <div class="tab-header"><a href="https://makrohr.azurewebsites.net/" target="_blank">Analytic Assistance</a></div>
+            <iframe src="https://makrohr.azurewebsites.net/" frameborder="0"></iframe>
+        </div>
+        <div id="dashboard" class="tab-content">
+            <div class="tab-header"><a href="https://app.powerbi.com/view?r=eyJrIjoiOWVlZTlmZTMtNjA3NC00Mjg4LTg2YjktMjA4NGE4ZTdhYjQ0IiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" target="_blank">Dashboard</a></div>
+            <iframe title="MakroHR" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOWVlZTlmZTMtNjA3NC00Mjg4LTg2YjktMjA4NGE4ZTdhYjQ0IiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+        <div id="data" class="tab-content">
+            <div class="tab-header"><a href="https://chula-my.sharepoint.com" target="_blank">Data</a></div>
+            <iframe width="402" height="346" frameborder="0" scrolling="no" src="https://chula-my.sharepoint.com/personal/6432154921_student_chula_ac_th/_layouts/15/Doc.aspx?sourcedoc={15c17484-1ea9-4dac-8caf-709932ae1ce6}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
