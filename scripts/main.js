@@ -26,5 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
         iframe.addEventListener('error', () => handleIframeError(iframe));
     });
 
-    showContent('accredible');
+    showContent('accredible'); // Display the first tab by default
 });

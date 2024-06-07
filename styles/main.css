@@ -12,7 +12,7 @@ body {
     height: 100vh;
     position: fixed;
     padding-top: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: width 0.3s;
 }
 
@@ -57,7 +57,7 @@ body {
     height: 100vh;
     overflow-y: auto;
     background-color: white;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
 }
