@@ -52,24 +52,21 @@ function createProject() {
     window.location.href = 'create_project.html';
 }
 
-function showProjectProfile() {
-    const modal = document.getElementById("projectProfileModal");
-    modal.style.display = "block";
+function showCreateProject() {
+    const projectDefaultIframe = document.getElementById('projectDefaultIframe');
+    const projectCreateIframe = document.getElementById('projectCreateIframe');
+    const backProjectButton = document.querySelector('.back-project-button');
+    projectDefaultIframe.style.display = "none";
+    projectCreateIframe.src = "https://forms.office.com/Pages/ResponsePage.aspx?id=e14dJ1ATlkurhFLb2kz0DGbi-Pp1oBxMjYHfLAdpEJxUN0I4Q0RNNDJHSFZIMEc2Q0ZYMVZZRExLVy4u&embed=true";
+    projectCreateIframe.style.display = "block";
+    backProjectButton.style.display = "inline-block";
 }
 
-function closeModal() {
-    const modal = document.getElementById("projectProfileModal");
-    modal.style.display = "none";
-}
-
-function showCreateProjectModal() {
-    const modal = document.getElementById("projectProfileModal");
-    modal.style.display = "block";
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById("projectProfileModal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+function showProjectList() {
+    const projectDefaultIframe = document.getElementById('projectDefaultIframe');
+    const projectCreateIframe = document.getElementById('projectCreateIframe');
+    const backProjectButton = document.querySelector('.back-project-button');
+    projectDefaultIframe.style.display = "block";
+    projectCreateIframe.style.display = "none";
+    backProjectButton.style.display = "none";
 }

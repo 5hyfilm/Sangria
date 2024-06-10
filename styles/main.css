@@ -1,3 +1,6 @@
+/* Importing the Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
     display: flex;
     margin: 0;
@@ -56,8 +59,7 @@ body {
     border-radius: 8px;
 }
 
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
+.sidebar ul li a:hover {
     background-color: #34495e;
     color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -75,8 +77,7 @@ body {
     transition: width 0.3s;
 }
 
-.sidebar ul li a:hover::before,
-.sidebar ul li a.active::before {
+.sidebar ul li a:hover::before {
     width: 100%;
 }
 
@@ -166,8 +167,10 @@ body {
     margin-right: 10px; /* Space between logo and link */
 }
 
-.chatgpt-button {
-    background-color: rgb(252, 27, 27);
+.chatgpt-button,
+.create-project-button,
+.back-project-button {
+    background-color: #3498db;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -181,7 +184,9 @@ body {
     right: 10px;
 }
 
-.chatgpt-button:hover {
-    background-color: rgb(252, 27, 27);
+.chatgpt-button:hover,
+.create-project-button:hover,
+.back-project-button:hover {
+    background-color: #2980b9;
     transform: scale(1.05);
 }
