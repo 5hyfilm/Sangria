@@ -47,13 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     showContent('accredible'); // Display the first tab by default
 });
 
-function createProject() {
-    // Redirect to create project page
-    window.location.href = 'create_project.html';
-}
-
 function showCreateProject() {
-    const projectDefaultIframe = document.getElementById('projectDefaultIframe');
+    const projectDefaultIframe = document.querySelector('iframe[title="projectListBi"]');
     const projectCreateIframe = document.getElementById('projectCreateIframe');
     const backProjectButton = document.querySelector('.back-project-button');
     projectDefaultIframe.style.display = "none";
@@ -63,7 +58,7 @@ function showCreateProject() {
 }
 
 function showProjectList() {
-    const projectDefaultIframe = document.getElementById('projectDefaultIframe');
+    const projectDefaultIframe = document.querySelector('iframe[title="projectListBi"]');
     const projectCreateIframe = document.getElementById('projectCreateIframe');
     const backProjectButton = document.querySelector('.back-project-button');
     projectDefaultIframe.style.display = "block";
