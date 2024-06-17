@@ -18,6 +18,10 @@ function showContent(tabId) {
     if (activeLink) {
         activeLink.classList.add('active');
     }
+
+    // Hide all right sidebars by default
+    const rightSidebars = document.querySelectorAll('.right-sidebar');
+    rightSidebars.forEach(sidebar => sidebar.style.display = 'none');
 }
 
 function handleIframeError(iframe) {
@@ -38,6 +42,43 @@ function openChatGPT() {
     window.open('https://chatgpt.com/g/g-1DHKWZRPl-marko-hr-bot', '_blank', 'width=800,height=600');
 }
 
+function toggleRightSidebar(tabId) {
+    const sidebar = document.getElementById(`${tabId}RightSidebar`);
+    if (sidebar.style.display === 'block') {
+        sidebar.style.display = 'none';
+    } else {
+        sidebar.style.display = 'block';
+    }
+}
+
+function showCreateProject() {
+    const projectIframe = document.getElementById('projectCreateIframe');
+    const projectListIframe = document.querySelector('#project .section-content iframe[title="projectListBi"]');
+    const createButton = document.querySelector('.create-project-button');
+
+    if (projectIframe.style.display === 'block') {
+        projectIframe.style.display = 'none';
+        projectListIframe.style.display = 'block';
+        createButton.textContent = 'Create a Project';
+    } else {
+        projectIframe.src = 'https://forms.office.com/Pages/ResponsePage.aspx?id=e14dJ1ATlkurhFLb2kz0DGbi-Pp1oBxMjYHfLAdpEJxUN0I4Q0RNNDJHSFZIMEc2Q0ZYMVZZRExLVy4u&embed=true';
+        projectIframe.style.display = 'block';
+        projectListIframe.style.display = 'none';
+        createButton.textContent = 'Back to Project List';
+    }
+}
+
+function showProjectList() {
+    const projectIframe = document.getElementById('projectCreateIframe');
+    projectIframe.style.display = 'none';
+
+    const projectListIframe = document.querySelector('#project .section-content iframe[title="projectListBi"]');
+    projectListIframe.style.display = 'block';
+
+    const createButton = document.querySelector('.create-project-button');
+    createButton.textContent = 'Create a Project';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const iframes = document.querySelectorAll('iframe');
     iframes.forEach(iframe => {
@@ -46,22 +87,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showContent('accredible'); // Display the first tab by default
 });
-
-function showCreateProject() {
-    const projectDefaultIframe = document.querySelector('iframe[title="projectListBi"]');
-    const projectCreateIframe = document.getElementById('projectCreateIframe');
-    const backProjectButton = document.querySelector('.back-project-button');
-    projectDefaultIframe.style.display = "none";
-    projectCreateIframe.src = "https://forms.office.com/Pages/ResponsePage.aspx?id=e14dJ1ATlkurhFLb2kz0DGbi-Pp1oBxMjYHfLAdpEJxUN0I4Q0RNNDJHSFZIMEc2Q0ZYMVZZRExLVy4u&embed=true";
-    projectCreateIframe.style.display = "block";
-    backProjectButton.style.display = "inline-block";
-}
-
-function showProjectList() {
-    const projectDefaultIframe = document.querySelector('iframe[title="projectListBi"]');
-    const projectCreateIframe = document.getElementById('projectCreateIframe');
-    const backProjectButton = document.querySelector('.back-project-button');
-    projectDefaultIframe.style.display = "block";
-    projectCreateIframe.style.display = "none";
-    backProjectButton.style.display = "none";
-}

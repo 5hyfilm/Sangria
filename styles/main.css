@@ -129,9 +129,14 @@ body {
     left: 0;
 }
 
-.tab-content iframe {
-    width: 100%;
+.tab-content .section-content {
+    display: flex;
     height: calc(100% - 60px); /* Adjust for header height */
+}
+
+.tab-content .section-content iframe {
+    width: 100%; /* Adjust for right sidebar */
+    height: 100%; /* Adjust for header height */
     border: none;
 }
 
@@ -169,7 +174,8 @@ body {
 
 .chatgpt-button,
 .create-project-button,
-.back-project-button {
+.back-project-button,
+.toggle-sidebar-button {
     background-color: #3498db;
     color: white;
     border: none;
@@ -179,14 +185,42 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+}
+
+.toggle-sidebar-button {
     position: absolute;
     top: 10px;
     right: 10px;
 }
 
+.toggle-sidebar-button i {
+    font-size: 1.2em; /* Adjust icon size */
+}
+
 .chatgpt-button:hover,
 .create-project-button:hover,
-.back-project-button:hover {
+.back-project-button:hover,
+.toggle-sidebar-button:hover {
     background-color: #2980b9;
     transform: scale(1.05);
+}
+
+.right-sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+    display: none;
+    position: relative;
+}
+
+.right-sidebar .chatgpt-button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.section-content iframe {
+    flex-grow: 1;
 }

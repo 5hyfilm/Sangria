@@ -8,6 +8,7 @@
     <link href="styles/project_list.css" rel="stylesheet">
     <link href="styles/modal.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="sidebar">
@@ -25,35 +26,71 @@
             <div class="tab-header">
                 <img src="images/logo_accredible.jpeg" alt="Accredible Logo" class="section-logo">
                 <a href="https://dashboard.accredible.com" target="_blank">Accredible</a>
+                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('accredible')">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <iframe src="https://dashboard.accredible.com/issuer/dashboard/" frameborder="0"></iframe>
+            <div class="section-content">
+                <iframe src="https://dashboard.accredible.com/issuer/dashboard/" frameborder="0"></iframe>
+                <div class="right-sidebar" id="accredibleRightSidebar">
+                    <h3>Additional Info</h3>
+                    <p>Some additional information or controls related to Accredible can be placed here.</p>
+                </div>
+            </div>
         </div>
         <div id="assistance" class="tab-content">
             <div class="tab-header">
                 <img src="images/logo_aistudio_.jpeg" alt="Assistance Logo" class="section-logo">
                 <a href="http://127.0.0.1:7860/" target="_blank">Assistance</a>
-                <button class="chatgpt-button" onclick="openChatGPT()">Go to Assistance on ChatGPT</button>
+                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('assistance')">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <iframe src="http://127.0.0.1:7860/" frameborder="0"></iframe>
+            <div class="section-content">
+                <iframe src="http://127.0.0.1:7860/" frameborder="0"></iframe>
+                <div class="right-sidebar" id="assistanceRightSidebar">
+                    <h3>Additional Info</h3>
+                    <p>Some additional information or controls related to Assistance can be placed here.</p>
+                    <button class="chatgpt-button" onclick="openChatGPT()">Go to Assistance on ChatGPT</button>
+                </div>
+            </div>
         </div>
         <div id="dashboard" class="tab-content">
             <div class="tab-header">
                 <img src="images/logo_powerbi.png" alt="Dashboard Logo" class="section-logo">
                 <a href="https://app.powerbi.com/view?r=eyJrIjoiOWVlZTlmZTMtNjA3NC00Mjg4LTg2YjktMjA4NGE4ZTdhYjQ0IiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" target="_blank">Dashboard</a>
+                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('dashboard')">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <iframe title="employeeBi" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYTZiYjhkZGItMzFjYS00MDc4LTkxZDUtYWY3NzdhNTg0MzJjIiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+            <div class="section-content">
+                <iframe title="employeeBi" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZjM4YThmNjQtZDJiNy00NjFiLTg5NzItNmI2MDQ2MTdiMTRkIiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                <div class="right-sidebar" id="dashboardRightSidebar">
+                    <h3>Additional Info</h3>
+                    <p>Some additional information or controls related to the Dashboard can be placed here.</p>
+                </div>
+            </div>
         </div>
         <div id="project" class="tab-content">
             <div class="tab-header">
                 <img src="images/logo_project.png" alt="Project Logo" class="section-logo">
                 <a href="#" target="_blank">Project Matching</a>
-                <button class="create-project-button" onclick="showCreateProject()">Create a Project</button>
-                <button class="back-project-button" onclick="showProjectList()" style="display: none;">Back to Project List</button>
+                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('project')">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <iframe title="projectListBi" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGE2YmVhZmMtYWIxYy00NGM2LWFjNDEtZTJiYzhkZTUyYTM1IiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
-            <iframe id="projectCreateIframe" width="640px" height="480px" src="" frameborder="0" style="border: none; max-width:100%; max-height:100vh; display: none;" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
-        </div>        
+            <div class="section-content">
+                <iframe title="projectListBi" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGE2YmVhZmMtYWIxYy00NGM2LWFjNDEtZTJiYzhkZTUyYTM1IiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                <iframe id="projectCreateIframe" width="640px" height="480px" src="" frameborder="0" style="border: none; max-width:100%; max-height:100vh; display: none;" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
+                <div class="right-sidebar" id="projectRightSidebar">
+                    <h3>Additional Info</h3>
+                    <p>Some additional information or controls related to the Project can be placed here.</p>
+                    <button class="create-project-button" onclick="showCreateProject()">Create a Project</button>
+                </div>
+            </div>
+        </div>
     </div>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
