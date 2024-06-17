@@ -68,6 +68,23 @@ function showCreateProject() {
     }
 }
 
+function showCreateEmployee() {
+    const employeeIframe = document.getElementById('employeeCreateIframe');
+    const dashboardListIframe = document.querySelector('#dashboard .section-content iframe[title="employeeBi"]');
+    const createButton = document.querySelector('.create-employee-button');
+
+    if (employeeIframe.style.display === 'block') {
+        employeeIframe.style.display = 'none';
+        dashboardListIframe.style.display = 'block';
+        createButton.textContent = 'Create an Employee';
+    } else {
+        employeeIframe.src = 'https://forms.office.com/Pages/ResponsePage.aspx?id=e14dJ1ATlkurhFLb2kz0DGbi-Pp1oBxMjYHfLAdpEJxUN0I4Q0RNNDJHSFZIMEc2Q0ZYMVZZRExLVy4u&embed=true';
+        employeeIframe.style.display = 'block';
+        dashboardListIframe.style.display = 'none';
+        createButton.textContent = 'Back to Dashboard List';
+    }
+}
+
 function showProjectList() {
     const projectIframe = document.getElementById('projectCreateIframe');
     projectIframe.style.display = 'none';
