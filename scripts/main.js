@@ -23,9 +23,9 @@ function showContent(tabId) {
     const rightSidebars = document.querySelectorAll('.right-sidebar');
     rightSidebars.forEach(sidebar => sidebar.style.display = 'none');
 
-    // Set button text to '>>' for all sidebars
+    // Set button text to '<<' for all sidebars
     const sidebarButtons = document.querySelectorAll('.toggle-sidebar-button');
-    sidebarButtons.forEach(button => button.textContent = '>>');
+    sidebarButtons.forEach(button => button.textContent = '<<');
 }
 
 function handleIframeError(iframe) {
@@ -50,11 +50,11 @@ function toggleRightSidebar(sectionId) {
     const rightSidebar = document.getElementById(sectionId + 'RightSidebar');
     const button = document.querySelector(`#${sectionId} .toggle-sidebar-button`);
 
-    if (rightSidebar.style.display === 'none' || rightSidebar.style.display === '') {
-        rightSidebar.style.display = 'block';
+    if (rightSidebar.style.display === 'block' || rightSidebar.style.display === '') {
+        rightSidebar.style.display = 'none';
         button.textContent = '<<';
     } else {
-        rightSidebar.style.display = 'none';
+        rightSidebar.style.display = 'block';
         button.textContent = '>>';
     }
 }
@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showContent('accredible'); // Display the first tab by default
 
-    // Set all right sidebar buttons to ">>" initially
+    // Set all right sidebar buttons to "<<" initially
     const toggleButtons = document.querySelectorAll('.toggle-sidebar-button');
     toggleButtons.forEach(button => {
-        button.textContent = '>>';
+        button.textContent = '<<';
     });
 });
