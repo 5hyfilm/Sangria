@@ -22,6 +22,10 @@ function showContent(tabId) {
     // Hide all right sidebars by default
     const rightSidebars = document.querySelectorAll('.right-sidebar');
     rightSidebars.forEach(sidebar => sidebar.style.display = 'none');
+
+    // Set button text to '>>' for all sidebars
+    const sidebarButtons = document.querySelectorAll('.toggle-sidebar-button');
+    sidebarButtons.forEach(button => button.textContent = '>>');
 }
 
 function handleIframeError(iframe) {
@@ -44,16 +48,14 @@ function openChatGPT() {
 
 function toggleRightSidebar(sectionId) {
     const rightSidebar = document.getElementById(sectionId + 'RightSidebar');
-    const buttonIcon = document.querySelector(`#${sectionId} .toggle-sidebar-button i`);
-    
+    const button = document.querySelector(`#${sectionId} .toggle-sidebar-button`);
+
     if (rightSidebar.style.display === 'none' || rightSidebar.style.display === '') {
         rightSidebar.style.display = 'block';
-        buttonIcon.classList.remove('fa-bars');
-        buttonIcon.classList.add('fa-arrow-left');
+        button.textContent = '<<';
     } else {
         rightSidebar.style.display = 'none';
-        buttonIcon.classList.remove('fa-arrow-left');
-        buttonIcon.classList.add('fa-bars');
+        button.textContent = '>>';
     }
 }
 
@@ -98,4 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     showContent('accredible'); // Display the first tab by default
+
+    // Set all right sidebar buttons to ">>" initially
+    const toggleButtons = document.querySelectorAll('.toggle-sidebar-button');
+    toggleButtons.forEach(button => {
+        button.textContent = '>>';
+    });
 });
