@@ -9,9 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" type="image/png" sizes="72x72" href="images/sangria-icon.png">
+    <meta name="description" content="Web Inside Web - An interactive web interface integrating various tools and platforms.">
+    <meta name="keywords" content="web, interface, Accredible, Assistance, Dashboard, Project">
 </head>
 <body>
-    <div class="sidebar">
+    <div class="sidebar" role="navigation" aria-label="Main Navigation">
         <img src="images/logo.png" alt="Makro Logo" class="logo">
         <ul>
             <li><a href="#accredible" onclick="showContent('accredible')">Accredible</a></li>
@@ -25,13 +27,13 @@
         <div id="accredible" class="tab-content">
             <div class="tab-header">
                 <img src="images/logo_accredible.jpeg" alt="Accredible Logo" class="section-logo">
-                <a href="https://dashboard.accredible.com" target="_blank">Accredible</a>
-                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('accredible')">
+                <a href="https://dashboard.accredible.com" target="_blank" aria-label="Accredible Dashboard">Accredible</a>
+                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('accredible')" aria-label="Toggle Sidebar">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
             <div class="section-content">
-                <iframe src="https://dashboard.accredible.com/issuer/dashboard/" frameborder="0"></iframe>
+                <iframe src="https://dashboard.accredible.com/issuer/dashboard/" frameborder="0" title="Accredible Dashboard"></iframe>
                 <div class="right-sidebar" id="accredibleRightSidebar">
                     <h3>Additional Info</h3>
                     <p>Some additional information or controls related to Accredible can be placed here.</p>
@@ -42,13 +44,13 @@
         <div id="assistance" class="tab-content">
             <div class="tab-header">
                 <img src="images/logo_aistudio_.jpeg" alt="Assistance Logo" class="section-logo">
-                <a href="http://127.0.0.1:7860/" target="_blank">Assistance</a>
-                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('assistance')">
+                <a href="http://127.0.0.1:7860/" target="_blank" aria-label="Assistance Dashboard">Assistance</a>
+                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('assistance')" aria-label="Toggle Sidebar">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
             <div class="section-content">
-                <iframe src="http://127.0.0.1:7860/" frameborder="0"></iframe>
+                <iframe src="http://127.0.0.1:7860/" frameborder="0" title="Assistance Dashboard"></iframe>
                 <div class="right-sidebar" id="assistanceRightSidebar">
                     <h3>Additional Info</h3>
                     <p>Some additional information or controls related to Assistance can be placed here.</p>
@@ -59,8 +61,8 @@
         <div id="dashboard" class="tab-content">
             <div class="tab-header">
                 <img src="images/logo_powerbi.png" alt="Dashboard Logo" class="section-logo">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiOWVlZTlmZTMtNjA3NC00Mjg4LTg2YjktMjA4NGE4ZTdhYjQ0IiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" target="_blank">Dashboard</a>
-                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('dashboard')">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiOWVlZTlmZTMtNjA3NC00Mjg4LTg2YjktMjA4NGE4ZTdhYjQ0IiwidCI6IjI3MWQ1ZTdiLTEzNTAtNGI5Ni1hYjg0LTUyZGJkYTRjZjQwYyIsImMiOjEwfQ%3D%3D" target="_blank" aria-label="Dashboard">Dashboard</a>
+                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('dashboard')" aria-label="Toggle Sidebar">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -77,8 +79,8 @@
         <div id="project" class="tab-content">
             <div class="tab-header">
                 <img src="images/logo_project.png" alt="Project Logo" class="section-logo">
-                <a href="#" target="_blank">Project Matching</a>
-                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('project')">
+                <a href="#" target="_blank" aria-label="Project Matching">Project Matching</a>
+                <button class="toggle-sidebar-button" onclick="toggleRightSidebar('project')" aria-label="Toggle Sidebar">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>

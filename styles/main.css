@@ -228,3 +228,50 @@ body {
 .section-content iframe {
     flex-grow: 1;
 }
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+    
+    .sidebar .logo {
+        display: none;
+    }
+    
+    .sidebar ul li {
+        padding: 10px 5px;
+    }
+
+    .sidebar ul li a {
+        font-size: 0.8em;
+        padding: 5px;
+    }
+
+    .logout-button {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+
+    .content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+    }
+    
+    .tab-header {
+        font-size: 1em;
+        height: 50px;
+    }
+
+    .section-logo {
+        width: 30px;
+        height: 30px;
+        padding: 2px;
+    }
+
+    .toggle-sidebar-button {
+        font-size: 1em;
+        top: 5px;
+        right: 5px;
+    }
+}
