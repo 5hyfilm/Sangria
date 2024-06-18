@@ -186,22 +186,22 @@ body {
     font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s;
 }
 
 .toggle-sidebar-button {
     position: absolute;
-    top: 10px;
+    top: 50%;
     right: 10px;
     font-size: 1.2em; /* Adjust icon size */
+    transform: translateY(-50%);
 }
 
 .chatgpt-button:hover,
 .create-project-button:hover,
 .create-employee-button:hover,
 .upload-data-button:hover,
-.back-project-button:hover,
-.toggle-sidebar-button:hover {
+.back-project-button:hover {
     background-color: #2980b9;
     transform: scale(1.05);
 }
@@ -271,7 +271,8 @@ body {
 
     .toggle-sidebar-button {
         font-size: 1em;
-        top: 5px;
+        top: 50%;
         right: 5px;
+        transform: translateY(-50%);
     }
 }
