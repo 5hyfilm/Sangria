@@ -42,12 +42,18 @@ function openChatGPT() {
     window.open('https://chatgpt.com/g/g-1DHKWZRPl-marko-hr-bot', '_blank', 'width=800,height=600');
 }
 
-function toggleRightSidebar(tabId) {
-    const sidebar = document.getElementById(`${tabId}RightSidebar`);
-    if (sidebar.style.display === 'block') {
-        sidebar.style.display = 'none';
+function toggleRightSidebar(sectionId) {
+    const rightSidebar = document.getElementById(sectionId + 'RightSidebar');
+    const buttonIcon = document.querySelector(`#${sectionId} .toggle-sidebar-button i`);
+    
+    if (rightSidebar.style.display === 'none' || rightSidebar.style.display === '') {
+        rightSidebar.style.display = 'block';
+        buttonIcon.classList.remove('fa-arrow-right');
+        buttonIcon.classList.add('fa-arrow-left');
     } else {
-        sidebar.style.display = 'block';
+        rightSidebar.style.display = 'none';
+        buttonIcon.classList.remove('fa-arrow-left');
+        buttonIcon.classList.add('fa-arrow-right');
     }
 }
 
