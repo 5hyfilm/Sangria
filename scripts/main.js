@@ -39,7 +39,7 @@ function handleIframeError(iframe) {
 function logout() {
     // Perform logout actions here, such as clearing session data
     // Redirect to login page
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 
 function openChatGPT() {
